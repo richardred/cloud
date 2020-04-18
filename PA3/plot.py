@@ -1,6 +1,8 @@
 #!/usr/bin/python
 import sys
-#import matplotlib.pyplot as plt
+from collections import defaultdict
+from statistics import mean
+import matplotlib.pyplot as plt
 
 temps2, temps12, temps19, times2, times12, times19 = ([] for i in range(6))
 for line in sys.stdin:
@@ -24,11 +26,22 @@ for line in sys.stdin:
             times12.append(hours)
         elif BuildingID == 19:
             temps19.append(int(ActualTemp))
-            times19.append(hours)          
+            times19.append(hours)
 
-plt.plot(times2, temps2)
-plt.plot(times12, temps12)
-plt.plot(times19, temps19)        
+# temp = defaultdict(set)
+# for c, i in zip(times19, temps19):
+#     temp[c].add(i)
+# print(temp)
+
+# line19 = dict(temp)
+# print(line19)
+
+# for st,vals in line19.items():
+#     print("Average for {} is {}".format(st,mean(vals)))
+
+plt.plot([9, 10, 11, 12, 13, 14, 15, 16], [67.53846153846153, 67, 68.38461538461539, 68.66666666666667, 72.5, 71.55555555555556, 65.38461538461539, 67.92857142857143])
+plt.plot([9, 10, 11, 12, 13, 14, 15, 16], [68.61538461538461, 66.36363636363636, 71.08333333333333, 71.4, 69.133, 67.57142857, 68.92857142857143, 68.83333333333333])
+plt.plot([9, 10, 11, 12, 13, 14, 15, 16], [69.35714285714286, 67.2, 68.5625, 68.71428571428571, 69.0625, 69.92857142857143, 69.84615384615384, 69.57142857142857])
 
 plt.ylabel('Average Temperatures of Buildings #2, 12, and 19 from 8am to 5pm')
 plt.show()

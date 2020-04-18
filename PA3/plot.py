@@ -44,5 +44,5 @@ plt.plot([9, 10, 11, 12, 13, 14, 15, 16], [68.61538461538461, 66.36363636363636,
 plt.plot([9, 10, 11, 12, 13, 14, 15, 16], [69.35714285714286, 67.2, 68.5625, 68.71428571428571, 69.0625, 69.92857142857143, 69.84615384615384, 69.57142857142857], label='Building 19')
 plt.legend(loc='upper left')
 plt.xlabel('Time of Day (8am-5pm)')
-plt.ylabel('Average Temperatures of Buildings #2, 12')
+plt.ylabel('Average Temperatures of Buildings 2, 12, and 19')
 plt.show()
